@@ -11,8 +11,6 @@ public class AsteroidManager : MonoBehaviour
     [SerializeField] private int _initialCount;
     public float spawnRangeX, spawnRangeY;
 
-    private List<GameObject> _asteroids = new List<GameObject>();
-
     private void Awake()
     {
         Instance = this;
@@ -35,7 +33,6 @@ public class AsteroidManager : MonoBehaviour
         int index = Random.Range(0, _asteroidPrefabs.Count);
         Vector2 spawnPos = new Vector2(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY));
         GameObject asteroid = Instantiate(_asteroidPrefabs[index], spawnPos, Quaternion.identity);
-        asteroid.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle.normalized, ForceMode2D.Impulse);
-        _asteroids.Add(asteroid);
+        asteroid.GetComponent<Rigidbody2D>().AddForce(Random.insideUnitCircle.normalized * 5f, ForceMode2D.Impulse);
     }
 }

@@ -255,11 +255,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   size: 3
   minSizeThreshold: 0.2
-  breakForce: 5
-  minPieces: 2
+  breakForce: 8
+  minPieces: 1
   maxPieces: 3
   minPieceSize: 0.3
-  maxPieceSize: 0.6
+  maxPieceSize: 0.5
 --- !u!114 &-9132864427309880043
 MonoBehaviour:
   m_ObjectHideFlags: 0
